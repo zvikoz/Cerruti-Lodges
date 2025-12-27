@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerruti Lodges - Luxury Accommodation in Zimbabwe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --primary-light: #2e5d3e;
+            --secondary: #d4a55e;
+            --light: #f8f5f0;
+            --dark: #2c2c2c;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --success: #10b981;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e0b870;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav-links li {
+            margin: 1.5rem 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Booking Widget */
+        .booking-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            max-width: 1000px;
+            margin: -80px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .form-group input, .form-group select {
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Rooms Section */
+        .rooms-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background-color: var(--light-gray);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .room-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .room-img {
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .room-info {
+            padding: 25px;
+        }
+
+        .room-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .room-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .room-price span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: var(--gray);
+        }
+
+        .room-features {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .room-feature {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .room-feature i {
+            color: var(--secondary);
+        }
+
+        .room-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .room-actions .btn {
+            flex: 1;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Amenities Section */
+        .amenities {
+            background-color: var(--light-gray);
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .amenity-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .amenity-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .amenity-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-rating {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Floating Booking Button */
+        .floating-booking-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .floating-booking-btn:hover {
+            background-color: #e0b870;
+            transform: scale(1.1);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal for Booking */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .rooms-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
+            
+            .room-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-mountain logo-icon"></i>
+                Cerruti Lodges
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#rooms">Rooms & Suites</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <div class="mobile-nav">
+            <div class="close-menu">
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms & Suites</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#booking" class="btn">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Experience Zimbabwe's Natural Beauty</h1>
+            <p>Luxurious lodges nestled in pristine landscapes. Unforgettable moments await in our carefully designed accommodations with world-class amenities.</p>
+            <div class="hero-btns">
+                <a href="#rooms" class="btn">Explore Rooms</a>
+                <a href="#booking" class="btn btn-outline">Check Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Widget -->
+    <section class="booking-widget" id="booking">
+        <div class="container">
+            <h3 style="text-align: center; margin-bottom: 25px; color: var(--primary);">Find Your Perfect Stay</h3>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="checkin">Check-in Date</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out Date</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Guests</label>
+                    <select id="guests" name="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="room-type">Room Type</label>
+                    <select id="room-type" name="room-type">
+                        <option value="all">All Rooms</option>
+                        <option value="executive">Executive Suite</option>
+                        <option value="family">Family Lodge</option>
+                        <option value="standard">Standard Room</option>
+                        <option value="honeymoon">Honeymoon Suite</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn" style="height: 48px;">Check Availability</button>
+                </div>
+            </form>
+            <p style="text-align: center; margin-top: 15px; color: var(--gray); font-size: 0.9rem;">
+                <i class="fas fa-shield-alt" style="color: var(--success); margin-right: 5px;"></i>
+                Secure booking with best rate guarantee
+            </p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="section-padding" id="rooms">
+        <div class="container">
+            <h2 class="section-title">Our Accommodations</h2>
+            <p class="section-subtitle">Choose from our selection of beautifully appointed rooms and suites, each designed to provide comfort and a connection to nature.</p>
+            
+            <div class="rooms-filter">
+                <div class="filter-btn active" data-filter="all">All Rooms</div>
+                <div class="filter-btn" data-filter="suite">Suites</div>
+                <div class="filter-btn" data-filter="family">Family</div>
+                <div class="filter-btn" data-filter="standard">Standard</div>
+                <div class="filter-btn" data-filter="honeymoon">Honeymoon</div>
+            </div>
+            
+            <div class="rooms-grid">
+                <!-- Executive Suite -->
+                <div class="room-card" data-category="suite">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Suite" class="room-img">
+                    <div class="room-info">
+                        <h3 class="room-title">Executive Suite</h3>
+                        <div class="room-price">$245 <span>/ night</span></div>
+                        <p>Spacious suite with panoramic views, king bed, and private balcony overlooking the valley.</p>
+                        <div class="room-features">
+                            <div class="room-feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>2 Adults</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>King Bed</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>650 sq ft</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Free WiFi</span>
+                            </div>
+                        </div>
+                        <div class="room-actions">
+                            <button class="btn btn-secondary quick-book" data-room="Executive Suite">Book Now</button>
+                            <button class="btn btn-outline view-details" data-room="executive">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Family Lodge -->
+                <div class="room-card" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family Lodge" class="room-img">
+                    <div class="room-info">
+                        <h3 class="room-title">Family Lodge</h3>
+                        <div class="room-price">$320 <span>/ night</span></div>
+                        <p>Two-bedroom lodge perfect for families, with separate living area and kitchenette.</p>
+                        <div class="room-features">
+                            <div class="room-feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>4-5 People</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>2 Queen Beds</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>850 sq ft</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>Kitchenette</span>
+                            </div>
+                        </div>
+                        <div class="room-actions">
+                            <button class="btn btn-secondary quick-book" data-room="Family Lodge">Book Now</button>
+                            <button class="btn btn-outline view-details" data-room="family">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Standard Room -->
+                <div class="room-card" data-category="standard">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Standard Room" class="room-img">
+                    <div class="room-info">
+                        <h3 class="room-title">Standard Room</h3>
+                        <div class="room-price">$180 <span>/ night</span></div>
+                        <p>Comfortable room with garden view, perfect for couples or solo travelers.</p>
+                        <div class="room-features">
+                            <div class="room-feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>2 Adults</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>Queen Bed</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>400 sq ft</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Free WiFi</span>
+                            </div>
+                        </div>
+                        <div class="room-actions">
+                            <button class="btn btn-secondary quick-book" data-room="Standard Room">Book Now</button>
+                            <button class="btn btn-outline view-details" data-room="standard">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Honeymoon Suite -->
+                <div class="room-card" data-category="honeymoon">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Honeymoon Suite" class="room-img">
+                    <div class="room-info">
+                        <h3 class="room-title">Honeymoon Suite</h3>
+                        <div class="room-price">$290 <span>/ night</span></div>
+                        <p>Romantic suite with private plunge pool, champagne on arrival, and sunset views.</p>
+                        <div class="room-features">
+                            <div class="room-feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>2 Adults</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>King Bed</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Private Pool</span>
+                            </div>
+                            <div class="room-feature">
+                                <i class="fas fa-wine-glass-alt"></i>
+                                <span>Champagne</span>
+                            </div>
+                        </div>
+                        <div class="room-actions">
+                            <button class="btn btn-secondary quick-book" data-room="Honeymoon Suite">Book Now</button>
+                            <button class="btn btn-outline view-details" data-room="honeymoon">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="section-padding amenities" id="amenities">
+        <div class="container">
+            <h2 class="section-title">Lodge Amenities</h2>
+            <p class="section-subtitle">We provide everything you need for a comfortable and memorable stay in the heart of Zimbabwe's wilderness.</p>
+            
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Restaurant & Bar</h3>
+                    <p>Local and international cuisine with farm-to-table ingredients and premium drinks selection.</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>Infinity Pool</h3>
+                    <p>Stunning infinity pool with panoramic views of the surrounding landscape.</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Spa & Wellness</h3>
+                    <p>Relaxing treatments using natural local ingredients in our tranquil spa.</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>High-Speed WiFi</h3>
+                    <p>Complimentary high-speed internet throughout the property.</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Guided Tours</h3>
+                    <p>Expert-led tours to explore the natural beauty and wildlife of the area.</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>24/7 Concierge</h3>
+                    <p>Our staff is available around the clock to assist with all your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Guest Reviews</h2>
+            <p class="section-subtitle">See what our guests have to say about their experience at Cerruti Lodges.</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Absolutely breathtaking location and exceptional service. The family lodge was perfect for our vacation, and the kids loved the pool. We'll definitely be back!"</p>
+                    <p class="testimonial-author">— Sarah M., Cape Town</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Cerruti Lodges</h3>
+                    <p>Experience luxury amidst Zimbabwe's stunning natural landscapes. Your perfect getaway awaits.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#rooms">Rooms & Suites</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                        <li><a href="#experiences">Local Experiences</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Victoria Falls Road, Zimbabwe</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+263 123 456 789</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@cerrutilodges.co.zw</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for exclusive offers and updates.</p>
+                    <form id="newsletterForm" style="margin-top: 15px;">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px;">
+                        </div>
+                        <button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 10px;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Cerruti Lodges. All rights reserved. | Designed for exceptional guest experiences</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <a href="https://wa.me/263123456789?text=Hi%20Cerruti%20Lodges,%20I'd%20like%20to%20inquire%20about%20availability" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <div class="floating-booking-btn" id="floatingBookBtn">
+        <i class="fas fa-calendar-alt"></i>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="close-modal">
+                <i class="fas fa-times"></i>
+            </div>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Book Your Stay</h2>
+            <form id="modalBookingForm">
+                <div class="form-group">
+                    <label for="modal-room">Room Type</label>
+                    <select id="modal-room" name="room" required>
+                        <option value="">Select a room</option>
+                        <option value="executive">Executive Suite</option>
+                        <option value="family">Family Lodge</option>
+                        <option value="standard">Standard Room</option>
+                        <option value="honeymoon">Honeymoon Suite</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-checkin">Check-in Date</label>
+                    <input type="date" id="modal-checkin" name="checkin" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-checkout">Check-out Date</label>
+                    <input type="date" id="modal-checkout" name="checkout" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-guests">Number of Guests</label>
+                    <input type="number" id="modal-guests" name="guests" min="1" max="6" value="2" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-name">Full Name</label>
+                    <input type="text" id="modal-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-email">Email Address</label>
+                    <input type="email" id="modal-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-phone">Phone Number</label>
+                    <input type="tel" id="modal-phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-requests">Special Requests (Optional)</label>
+                    <textarea id="modal-requests" name="requests" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Complete Booking</button>
+                
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--gray);">
+                    <i class="fas fa-lock" style="margin-right: 5px;"></i>
+                    Your information is secure. We'll confirm your booking within 24 hours.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+        
+        // Room Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const roomCards = document.querySelectorAll('.room-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Show/hide room cards based on filter
+                roomCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Booking Modal
+        const floatingBookBtn = document.getElementById('floatingBookBtn');
+        const bookingModal = document.getElementById('bookingModal');
+        const closeModal = document.querySelector('.close-modal');
+        const quickBookButtons = document.querySelectorAll('.quick-book');
+        
+        floatingBookBtn.addEventListener('click', () => {
+            bookingModal.classList.add('active');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            bookingModal.classList.remove('active');
+        });
+        
+        quickBookButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const roomType = button.getAttribute('data-room');
+                document.getElementById('modal-room').value = roomType.toLowerCase().replace(' ', '-');
+                bookingModal.classList.add('active');
+            });
+        });
+        
+        // Close modal when clicking outside
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                bookingModal.classList.remove('active');
+            }
+        });
+        
+        // Form Submissions
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Checking availability... In a real implementation, this would connect to a booking system.');
+            // Here you would typically make an API call to check room availability
+        });
+        
+        document.getElementById('modalBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request! We will contact you within 24 hours to confirm.');
+            bookingModal.classList.remove('active');
+            // Here you would typically send the form data to your backend
+        });
+        
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+        
+        // Set minimum date for check-in to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').min = today;
+        document.getElementById('modal-checkin').min = today;
+        
+        // Update checkout min date when checkin changes
+        document.getElementById('checkin').addEventListener('change', function() {
+            document.getElementById('checkout').min = this.value;
+        });
+        
+        document.getElementById('modal-checkin').addEventListener('change', function() {
+            document.getElementById('modal-checkout').min = this.value;
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
